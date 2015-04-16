@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "Host Switch Plus",
+  "description": "Host Switch Plus",
+  "icons": {
+    "16"  : "icons/icon_16.png",
+    "19"  : "icons/icon_19.png",
+    "128" : "icons/icon_128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "options_page": "pages/option.html",
+  //
+  //"devtools_page": "devtools.html",
+
+    "content_scripts": [ {
+        "exclude_globs": [  ],
+        "include_globs": [ "*" ],
+        "js": [ "/js/script.js" ],
+        "matches": [ "http://*/*", "https://*/*" ],
+        "run_at": "document_start",
+        //"run_at":"document_before"
+        "all_frames": false
+    } ],
+
+    "browser_action": {
+      "default_icon": "icons/icon_16.png",
+      "default_title": "Host Switch Plus",      // optional; shown in tooltip
+      "default_popup": "pages/popup.html"        // optional
+      //"default_popup": "popup.html"
+  },
+  //"default_locale": "en",
+  "permissions": [
+    //"declarativeWebRequest",
+    "proxy", "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "tabs",
+    "contextMenus",
+    "downloads",
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>"
+  ],
+  "minimum_chrome_version": "22",
+  "version": "1.2"
+}

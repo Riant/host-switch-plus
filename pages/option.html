@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Hosts</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery.min.js"></script>
+    <script src="/libs/tpl.js"></script>
+    <script src="/js/model.js"></script>
+    <script src="/js/pop.js"></script>
+    <script src="/js/option.js"></script>
+  </head>
+  <body>
+  <div class="inner">
+    <h1>Host Switch Plus</h1>
+    <nav id="add_tab" class="tabNavs">
+        <a href="#" data-target="#addForm" class="current">添加</a>
+        <a href="#" data-target="#bulkForm">批量添加</a>
+        <a href="#" data-target="#list" id="listBtn">管理</a>
+    </nav>
+    <div class="tabConts">
+        <form role="form" id="addForm" class="tabCont current">
+            <div id="formNote" class="formNote" style="display:none;"></div>
+            <input type="hidden" name="id" id="item-id">
+            <div class="field">
+                <label for="ip" class="col-xs-2 control-label">IP</label>
+                <input type="text" autocomplete="off" placeholder="IP，如: 127.0.0.1 或 127.0.0.1:8888" id="ip" list="ip-list">
+                <datalist id="ip-list"></datalist>
+            </div>
+
+            <div class="field">
+                <label for="domain">域名</label>
+                <input type="text" placeholder="域名，如: www.google.com" id="domain" list="domain-list">
+                <datalist id="domain-list"></datalist>
+            </div>
+
+            <div class="field">
+                <label>标签</label>
+                <span id="div_labels" class="checkboxs">
+                    <label class="checkbox"><input type="checkbox" name="labels[]" value="prod">prod</label>
+                    <label class="checkbox"><input type="checkbox" name="labels[]" value="dev">dev</label>
+                    <label class="checkbox"><input type="checkbox" name="labels[]" value="test">test</label>
+                </span>
+                <input type="text" id="add_labels" placeholder="自定义标签，如:test1,翻墙（英文逗号分隔）">
+            </div>
+            <div class="field">
+                <label for="note">备注</label>
+                <input type="text" placeholder="附加描述,可选" id="note">
+            </div>
+
+            <div class="field">
+                <label></label>
+                <input type="submit" value="添加">
+            </div>
+        </form>
+        <form action="#" id="bulkForm" class="tabCont bulkForm">
+            <div class="field textareaField">
+                <label for="bulkAdd">IP列表
+                    <small>每行一条记录； 每条分别为 IP、域名、标签、备注，使用空格隔开；多个标签使用英文逗号,隔开
+                        <br>192.168.1.1 www.google.com
+                        <br>#这个支持泛域名匹配模式:
+                        <br>192.168.1.1 *.xyz.com test
+                        <br>或者配置其他代理工具
+                        <br>127.0.0.1:8888 www.domain.com dev
+                    </small>
+                </label>
+                <textarea id="bulkAdd"></textarea>
+            </div>
+            <div class="btnLine">
+                <input type="submit" value="提交">
+            </div>
+        </form>
+        <div id="list" class="tabCont">
+            <div class="search">
+                <input type="text" id="input_search" class="form-control input-sm" placeholder="搜索:域名,ip,标签. 比如:web1或者web2 ip:192.或者tags:dev " value=""><input type="submit" id="btn_search" value="搜索">
+            </div>
+            <div class="filter">标签：<span id="label-filter" class="noBulk"></span></div>
+            <table id="main-table" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th width="20"><input id="select_all" type="checkbox"></th>
+                        <th width="110">IP</th>
+                        <th>域名</th>
+                        <th>标签</th>
+                        <th>备注</th>
+                        <th width="100"></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-hosts" class="needBulk"></tbody>
+            </table>
+            <div class="bulkActions">
+                <a href="#" id="but_del">删除</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script id="host-item" type="text/template">
+        <tr id="host-{=id}" data-id="{=id}" data-domain="{=domain}" data-ip="{=ip}" title="更新时间:{=uptime}">
+            <td><input name="id[]" value="{=id}" type="checkbox"></td>
+            <td>{=ip}</td>
+            <td>{=domain}</td>
+            <td class="tags">{=tags}</td>
+            <td class="note">{=note}</td>
+            <td>
+                <span class="actions"><a href="#" data-id="{=id}" class="delete">删除</a> <i class="I">|</i> <a href="#" data-id="{=id}" class="edit">编辑</a></span>
+            </td>
+        </tr>
+    </script>
+  </body>
+</html>
