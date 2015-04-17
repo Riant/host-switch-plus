@@ -1,6 +1,8 @@
 # Host Switch Plus - Chrome Extension
 
-Changes the hosts rules in Chrome. It's easy, and effect immediately.
+Based on [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)
+
+Change the hosts rules in Chrome. It's easy, and effect immediately.
 
 I just want to make the web developers works happy if they often need to switch hosts between develop/test/production environment.
 
@@ -13,6 +15,8 @@ By the way,
 Sorry for my Poor English, learn more from the screenshots please.
 
 Any questions/issues let me know: https://github.com/Riant/host-switch-plus/issues
+
+基于 [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch) 修改完善、分享。感谢原作者开源共享。
 
 > 域名ip切换工具:
 > 
@@ -31,14 +35,12 @@ IP:端口 域名 tag 备注
 在程序开发过程中，难免开发、测试、生产环境各种切换，一般我们直接修改系统的 hosts 文件。
 
 这么做的几个问题：
+
 1. 编辑、管理麻烦，推荐 [SwitchHosts!](http://oldj.net/article/switchhosts/)；
+
 2. 生效延迟。用 Fiddler 的同学可以试试它 Tools 下的 HOSTS 工具；但是这个工具又让我们回到了第一个问题上。
 
-好了，能否有一个工具管理方便，又快捷简单呢？我找到一个 Chrome 扩展 [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch);
-
-很让人兴奋的一个插件。
-
-问题似乎解决了。
+好了，能否有一个工具管理方便，又快捷简单呢？我找到一个 Chrome 扩展 [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)；问题似乎解决了。
 
 可是为了用 Fiddler，我还装了插件 [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-ntp-icon)
 
@@ -46,7 +48,7 @@ IP:端口 域名 tag 备注
 
 感谢 Chrome Host Switch 是在 Github 开源分享，遗憾给他的 Issues 一直没有回应，估计作者也是很久没有跟进了；于是自己动手吧。
 
-大概看了下代理实现部分，尝试修改了一下，同时完善了原作者没有完成的编辑、批量添加等功能，并清理了文件很大但用处不多的 Bootstrap 及其 Js 插件。
+大概看了下代理实现部分，尝试修改了一下，同时完善了原作者没有完成的编辑、批量添加等功能，同时新增了一个域名对应多个IP 时，只能有一个生效的检测，并清理了文件很大但用处不多的 Bootstrap 及其 Js 插件。
 
 由于最近忙，没有详细测试完善，任何疑问，建议，欢迎[提交 Issues](https://github.com/Riant/host-switch-plus/issues).
 
