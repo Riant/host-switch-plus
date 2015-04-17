@@ -38,7 +38,7 @@ $(function () {
             var tag = tags[i];
             total += tag.count;
             labels_html += '<a href="#" data-tag="' + tag.name + '">' + tag.name + '(' + tag.count + ')</a>';
-            label_checks += '<label class="checkbox-inline"><input type="checkbox" name="labels[]" value="' + tag.name + '">' + tag.name + '</label>';
+            label_checks += '<label class="checkbox"><input type="checkbox" name="labels[]" value="' + tag.name + '">' + tag.name + '</label>';
         }
         labels.html('<a href="#" data-tag="" class="action">All('+ total +')</a>'+ labels_html);
         div_labels.html(label_checks);

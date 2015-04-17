@@ -1,5 +1,19 @@
 # Host Switch Plus - Chrome Extension
 
+Changes the hosts rules in Chrome. It's easy, and effect immediately.
+
+I just want to make the web developers works happy if they often need to switch hosts between develop/test/production environment.
+
+One more feature is that you can set a local proxy for some kind of domain, For example, if you use Fiddler AutoResponder, you can set the domain IP as 127.0.0.1:8888.
+
+By the way, 
+1. if you use windows system and just want to easy to manage you system hosts config, I recommend a windows tool called [SwitchHosts!](http://oldj.net/article/switchhosts/)
+2. If you use Fiddler, it had a hosts tool under menu Tools > HOSTS, but I think it's difficult to manage the host rules.
+
+Sorry for my Poor English, learn more from the screenshots please.
+
+Any questions/issues let me know: https://github.com/Riant/host-switch-plus/issues
+
 > 域名ip切换工具:
 > 
 > 基于 代理PAC 自动切换一个域名的IP，而不用修改 hosts, 方便web开发人员在 各种/测试/开发/线上 环境快速切换
@@ -34,7 +48,7 @@ IP:端口 域名 tag 备注
 
 大概看了下代理实现部分，尝试修改了一下，同时完善了原作者没有完成的编辑、批量添加等功能，并清理了文件很大但用处不多的 Bootstrap 及其 Js 插件。
 
-由于最近忙，没有详细测试完善，任何疑问，建议，欢迎提交 Issues.
+由于最近忙，没有详细测试完善，任何疑问，建议，欢迎[提交 Issues](https://github.com/Riant/host-switch-plus/issues).
 
 ##注：
 1. 该版本暂时没有支持原版 Host Switch 的别名功能
