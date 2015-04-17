@@ -8,8 +8,9 @@ I just want to make the web developers works happy if they often need to switch 
 
 One more feature is that you can set a local proxy for some kind of domain, For example, if you use Fiddler AutoResponder, you can set the domain IP as 127.0.0.1:8888.
 
-By the way, 
+By the way:
 1. if you use windows system and just want to easy to manage you system hosts config, I recommend a windows tool called [SwitchHosts!](http://oldj.net/article/switchhosts/)
+
 2. If you use Fiddler, it had a hosts tool under menu Tools > HOSTS, but I think it's difficult to manage the host rules.
 
 Sorry for my Poor English, learn more from the screenshots please.
@@ -49,6 +50,14 @@ IP:端口 域名 tag 备注
 感谢 Chrome Host Switch 是在 Github 开源分享，遗憾给他的 Issues 一直没有回应，估计作者也是很久没有跟进了；于是自己动手吧。
 
 大概看了下代理实现部分，尝试修改了一下，同时完善了原作者没有完成的编辑、批量添加等功能，同时新增了一个域名对应多个IP 时，只能有一个生效的检测，并清理了文件很大但用处不多的 Bootstrap 及其 Js 插件。
+
+![Popup Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-1.png)
+
+![Add New Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-add.png)
+
+![Bulk Add Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-bulkadd.png)
+
+![Hosts Manage Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-hosts.png)
 
 由于最近忙，没有详细测试完善，任何疑问，建议，欢迎[提交 Issues](https://github.com/Riant/host-switch-plus/issues).
 
