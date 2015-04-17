@@ -70,23 +70,28 @@ $(function () {
         return false;
     });
 
-    $('bulkForm').on('submit', function(){
-        var infos = $('#quick-add').val().split('\n');
+    $('#bulkForm').on('submit', function(){
+        var infos = $('#bulkAdd').val().split('\n');
         var rules = /^\s*([^\s]+)\s*([^\s]+)\s*([^\s]+)?\s*([^\s]+)?\s*$/;
         for( var i = 0, len = infos.length; i < len; i++ ){
-            var info = rules.exec(infos[i]);
+            var info = $.trim(infos[i]);
+            if( info.indexOf('#') === 0 ){
+                continue;
+            }
+            var info = rules.exec(info);
             if( info.length >= 3 ){
                 var item = {
                     'ip': info[1],
                     'domain': info[2],
                     'tags': info[3] ? info[3].split(',') : '',
                     'note': info[4] ? info[4] : '',
-                    'status':1,
+                    'status': 0,
                     'uptime': new Date().Format("yyyy-MM-dd hh:mm:ss")
                 };
                 model.addHost(item);
             }
         }
+        $('#listBtn').trigger('click');
         return false;
     });
 

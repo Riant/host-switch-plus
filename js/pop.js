@@ -40,7 +40,7 @@ $(function () {
             labels_html += '<a href="#" data-tag="' + tag.name + '">' + tag.name + '(' + tag.count + ')</a>';
             label_checks += '<label class="checkbox-inline"><input type="checkbox" name="labels[]" value="' + tag.name + '">' + tag.name + '</label>';
         }
-        labels.html('<a href="#" data-tag="" class="action">全部('+ total +')</a>'+ labels_html);
+        labels.html('<a href="#" data-tag="" class="action">All('+ total +')</a>'+ labels_html);
         div_labels.html(label_checks);
     }
 
@@ -155,7 +155,7 @@ $(function () {
                 if( e.target.tagName.toLowerCase() === 'a' ){
                     $this = $(e.target);
                     if( $this.is('.delete') ){
-                        if( confirm('确定删除吗？') ){
+                        if( confirm('Delete Confirm') ){
                             model.removeHost($this.data('id'));
                             $item.remove();
                         }
@@ -196,11 +196,11 @@ $(function () {
         }
     });
 
-    $('#input_search').change(function () {
+    $('#input_search').on('keyup', function(){
         clearTimeout($(this).data('t'));
         $(this).data('t', setTimeout(search, 100));
-    })
-    $('#btn_search').click(search);
+    });
+    $('#searchForm').on('submit', search);
 
     $("#status").prop('checked', model.getStatus()).change(function () {
         model.setStatus(this.checked);
@@ -255,9 +255,8 @@ function render_search_result(result, isBulk) {
     var tbody = $('#tbody-hosts'),
         html = '';
     isBulk = typeof isBulk === 'undefined' ? tbody.is('.needBulk') : isBulk;
-    //@todo 改进使用 模板引擎
     if (result.length == 0) {
-        html = '<tr><td colspan="6">没有结果</td></tr>';
+        html = '<tr><td colspan="6">No Results</td></tr>';
     } else {
         $(result).each(function (i, v) {
             v.tags = v.tags ? (v.tags.join(', ')) : '';

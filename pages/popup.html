@@ -8,36 +8,37 @@
     <script src="/js/model.js"></script>
     <script src="/js/pop.js"></script>
 </head>
-<body>
+<body class="popup">
 <div class="inner">
-    <h1>Host Switch Plus <small>
-        <a href="/pages/option.html" target="_blank">添加</a>
+    <h1>Host Switch Plus
+        <small>
+            <a href="/pages/option.html" target="_blank">Add New</a>
             <i class="I">|</i>
-            <a class="btn" target="_blank" href="https://github.com/shendongming/chrome-host-switch">Fork</a>
-            <label class="checkbox"><input id="status" type="checkbox" value="1" checked><span>启用</span></label>
+            <a class="btn" target="_blank" href="https://github.com/Riant/host-switch-plus">Fork</a>
         </small>
+        <label class="checkbox"><input id="status" type="checkbox" value="1" checked><span>Enable</span></label>
     </h1>
-    <div class="search">
-        <input type="text" id="input_search" class="form-control input-sm" placeholder="搜索:域名,ip,标签. 比如:web1或者web2 ip:192.或者tags:dev " value=""><input type="submit" id="btn_search" value="搜索">
-    </div>
+    <form action="#" id="searchForm" class="search">
+        <input type="text" id="input_search" class="form-control input-sm" placeholder="Search Domain,IP,Tag.(ip:192. or tags:dev)" value="">
+    </form>
 
-    <div class="filter">标签：<span id="label-filter"></span>（双击标签可批量启用）</div>
+    <div class="filter">Tags: <span id="label-filter"></span>(Double click to try to enable all)</div>
 
     <table id="main-table" class="table table-hover table-condensed">
         <thead>
             <tr>
                 <th width="20">&nbsp;</th>
                 <th width="110">IP</th>
-                <th>域名</th>
-                <th>标签</th>
-                <th>备注</th>
+                <th>Domain</th>
+                <th>Tag</th>
+                <th>Note</th>
             </tr>
         </thead>
         <tbody id="tbody-hosts"></tbody>
     </table>
 </div>
 <script id="host-item" type="text/template">
-    <tr id="host-{=id}" data-id="{=id}" data-domain="{=domain}" title="更新时间:{=uptime}">
+    <tr id="host-{=id}" data-id="{=id}" data-domain="{=domain}" title="Updated at: {=uptime}">
         <td><a class="host-status {=status_class}" data-status="{=status}" data-id="{=id}" data-domain="{=domain}" href="#"></a></td>
         <td>{=ip}</td>
         <td>{=domain}</td>

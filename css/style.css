@@ -1,8 +1,11 @@
-body { font-size: 14px; color: #333; font-family: Arial, 'Microsoft Yahei'; background: #FFF;}
+body { font-size: 14px; line-height: 1.5; color: #333; font-family: Arial, 'Microsoft Yahei'; background: #FFF;}
 .inner { min-width: 500px; max-width: 960px;}
 
-h1, h2 { margin: 0 0 15px;}
+.popup .inner { padding: 5px 10px 10px;}
+.popup h1 { font-size: 18px; position: relative;}
+h1, h2 { margin: 0 0 0.4em;}
 h1 small { font-size: 14px; margin-left: 10px;}
+h1 .checkbox { position: absolute; bottom: 0; right: 0; font-size: 14px;}
 
 a { text-decoration: none; color: #FFA200;}
 i.I { padding: 0 5px; color: #999;}
@@ -13,15 +16,15 @@ i.I { padding: 0 5px; color: #999;}
 .status-disabled { color: #cccccc;}
 
 .field { margin-bottom: 10px;}
-.bulkForm label { display: block; width: auto;}
-label { display: inline-block; width: 80px; vertical-align: top; padding-top: 7px;}
+.field label { display: inline-block; width: 80px; vertical-align: top; padding-top: 6px;}
+.bulkForm .field label { display: block; width: auto;}
 label.checkbox { width: auto; margin-right: 20px;}
 label small { font-size: 12px; font-weight: normal; color: #999; display: block; line-height: 1.8;}
 
 input, textarea, select { border: 1px solid #DDD; font-size: 12px; font-family: Arial, 'Microsoft Yahei';}
 input[type="text"] { font-size: 12px; height: 27px; line-height: 27px; padding: 1px 8px 0; width: 280px;}
 input:focus { outline: none; border-color: #999;}
-input[type="radio"], input[type="checkbox"] { vertical-align: middle;}
+input[type="radio"], input[type="checkbox"] { position: relative; top: 1px;}
 input[type="submit"] { cursor: pointer; background: #3B8DBD; border-color: #3B8DBD; padding: 6px 10px; color: #FFF;}
 input[type="submit"]:hover { background: #FFA24F; border-color: #FFA24F;}
 textarea { width: 450px; height: 180px; padding: 5px 8px; line-height: 1.8;}
@@ -49,7 +52,9 @@ tr:hover .actions { display: block;}
 .host-status { display: inline-block; position: relative; top: 1px; width: 12px; height: 12px; border-radius: 100%; background: #CCC;}
 .status-enabled { background: #00BC39;}
 
-.search input { vertical-align: middle; border-color: #3B8DBD;}
+.search { margin-bottom: 10px;}
+.search input { height: 23px; line-height: 23px; vertical-align: middle; border-color: #CCC;}
+.search input:focus { border-color: #333;}
 
 .bulkActions { font-size: 12px;}
 .bulkActions a { display: inline-block; margin-right: 5px; padding: 3px 10px; background: #3B8DBD; color: #FFF; border-radius: 3px;}
