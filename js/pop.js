@@ -4,6 +4,8 @@
  */
 
 function search(kw) {
+    if( kw === '' ) $('#input_search').val('');
+
     kw = kw || $('#input_search').val();
     var result = model.search(kw);
     //显示
@@ -12,14 +14,13 @@ function search(kw) {
 
 var model = window.Model;
 $(function () {
-
     var last_search = model.getkws();
     var kws = []
     $(model.getkws()).each(function (i, v) {
         kws.push({'kw': v});
     });
 
-    setTimeout(search)
+    setTimeout(search);
 
     function render_label_filter() {
         var tags = model.countTags();
@@ -117,7 +118,8 @@ $(function () {
                 s = kws.join(' ');
             }
             $(this).addClass('action').siblings('a').removeClass('action');
-            $('#input_search').val(s).change();
+            $('#input_search').val(s);
+            search();
         }
         return false;
     });
@@ -200,7 +202,10 @@ $(function () {
         clearTimeout($(this).data('t'));
         $(this).data('t', setTimeout(search, 100));
     });
-    $('#searchForm').on('submit', search);
+    $('#searchForm').on('submit', function(){
+        search();
+        return false;
+    });
 
     $("#status").prop('checked', model.getStatus()).change(function () {
         model.setStatus(this.checked);

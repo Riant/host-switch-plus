@@ -2,11 +2,13 @@
 
 Based on [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)
 
+Install from [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon)
+
 Change the hosts rules in Chrome. It's easy, and effect immediately.
 
-I just want to make the web developers works happy if they often need to switch hosts between develop/test/production environment.
+I just want to make the web developers work happy when they often need to switch hosts between develop/test/production environment.
 
-One more feature is that you can set a local proxy for some kind of domain, For example, if you use Fiddler AutoResponder, you can set the domain IP as 127.0.0.1:8888.
+One more feature is that you can set a local proxy for some kind of domain, For example, if you use Fiddler AutoResponder, you may set the domain IP as 127.0.0.1:8888.
 
 By the way:
 
@@ -23,6 +25,8 @@ Any questions/issues let me know: https://github.com/Riant/host-switch-plus/issu
 > 域名ip切换工具:
 > 
 > 基于 代理PAC 自动切换一个域名的IP，而不用修改 hosts, 方便web开发人员在 各种/测试/开发/线上 环境快速切换
+
+通过 [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon) 安装
 
 通过该 Chrome 扩展，快捷方便的切换、设置 host 代理规则。
 

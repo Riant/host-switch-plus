@@ -81,16 +81,26 @@ $(function () {
             var info = rules.exec(info);
             if( info.length >= 3 ){
                 var item = {
-                    'ip': info[1],
-                    'domain': info[2],
-                    'tags': info[3] ? info[3].split(',') : '',
-                    'note': info[4] ? info[4] : '',
+                    'ip': $.trim(info[1]),
+                    'domain': $.trim(info[2]),
+                    'tags': '',
+                    'note': $.trim(info[4]) ? $.trim(info[4]) : '',
                     'status': 0,
                     'uptime': new Date().Format("yyyy-MM-dd hh:mm:ss")
                 };
+
+                var tags = $.trim(info[3]) ? $.trim(info[3]).split(',') : '';
+                if( tags.length ){
+                    item.tags = [];
+                    $(tags).each(function(i){
+                        if( tags[i] !== '' ) item.tags.push(tags[i]);
+                    });
+                }
+
                 model.addHost(item);
             }
         }
+        search('');
         $('#listBtn').trigger('click');
         return false;
     });
@@ -136,4 +146,6 @@ $(function () {
             return true;
         }
     });
+
+    if( location.hash === '#hosts' ) $('#listBtn').trigger('click');
 });

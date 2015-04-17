@@ -21,7 +21,6 @@
     var domains=[];
 
     function uniq_arr(arr,key){
-
         var dic={}
         for(var i=0;i<arr.length;i++){
             var t=arr[i];
@@ -31,12 +30,10 @@
         arr.length=0;
         for(var k in dic){
             if(dic.hasOwnProperty(k)){
-
                 arr.push(dic[k]);
                 j++;
             }
         }
-
         return arr;
     }
 
@@ -57,7 +54,6 @@
         if(last_callback_domain){
             last_callback_domain(domains);
         }
-
     }
     //第一次加载
     loadsIp()
@@ -223,7 +219,6 @@
      * @returns {Array}
      */
     model.countTags = function () {
-
         var tags = {
             'prod': 0,
             'dev': 0,
@@ -254,8 +249,8 @@
         return result;
     }
 
-    model.getStatus=function(){
-        return loadData('status')?loadData('status'):0;
+    model.getStatus = function(){
+        return loadData('status') ? loadData('status') : 0;
     }
 
     model.getEnabledHosts=function(){
@@ -312,7 +307,6 @@
         saveData('status',checked);
         this.checked = checked;
 
-
         var script = '';
 
         if (this.checked) {
@@ -367,9 +361,7 @@
                 },
                 scope: 'regular'
             }, $.noop);
-
         }
-
     }
     //移除主机
     model.removeHost = function (id) {
@@ -436,4 +428,9 @@
     }
 
     window.Model = model;
+
+    // init status as true
+    if( localStorage['status'] === undefined ){
+        model.setStatus(true);
+    }
 })(window);

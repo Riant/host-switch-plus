@@ -2,10 +2,12 @@ body { font-size: 14px; line-height: 1.5; color: #333; font-family: Arial, 'Micr
 .inner { min-width: 500px; max-width: 960px;}
 
 .popup .inner { padding: 5px 10px 10px;}
-.popup h1 { font-size: 18px; position: relative;}
 h1, h2 { margin: 0 0 0.4em;}
 h1 small { font-size: 14px; margin-left: 10px;}
-h1 .checkbox { position: absolute; bottom: 0; right: 0; font-size: 14px;}
+
+.popup h1 { font-size: 18px; position: relative;}
+.popup h1 .checkbox { position: absolute; bottom: 0; right: 0; font-size: 14px;}
+.popup h1 small { font-weight: normal; font-size: 12px;}
 
 a { text-decoration: none; color: #FFA200;}
 i.I { padding: 0 5px; color: #999;}
@@ -15,6 +17,7 @@ i.I { padding: 0 5px; color: #999;}
 .status-enabled { color: green;}
 .status-disabled { color: #cccccc;}
 
+label { cursor: pointer;}
 .field { margin-bottom: 10px;}
 .field label { display: inline-block; width: 80px; vertical-align: top; padding-top: 6px;}
 .bulkForm .field label { display: block; width: auto;}
