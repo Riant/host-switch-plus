@@ -41,11 +41,11 @@
                     <label class="checkbox"><input type="checkbox" name="labels[]" value="dev">dev</label>
                     <label class="checkbox"><input type="checkbox" name="labels[]" value="test">test</label>
                 </span>
-                <input type="text" id="add_labels" placeholder="Example: test1,翻墙（英文都好,分隔）">
+                <input type="text" id="add_labels" placeholder="Example: test1,翻墙">
             </div>
             <div class="field">
                 <label for="note">Note</label>
-                <input type="text" placeholder="附加描述" id="note">
+                <input type="text" placeholder="Note" id="note">
             </div>
 
             <div class="field">
@@ -55,12 +55,12 @@
         </form>
         <form action="#" id="bulkForm" class="tabCont bulkForm">
             <div class="field textareaField">
-                <label for="bulkAdd">IP列表
-                    <small>每行一条记录； 每条分别为 IP、域名、标签、备注，使用空格隔开；多个标签使用英文逗号,隔开
+                <label for="bulkAdd"><strong>Hosts:</strong>
+                    <small>One rule every line. 每行一条记录； 每条分别为 IP, Domain, Tags, Note，使用空格隔开；多个标签使用英文逗号,隔开
+                        <br>For example:
                         <br>#支持泛域名匹配模式
                         <br>192.168.1.1 www.google.com
                         <br>192.168.1.1 *.xyz.com test
-                        <br>#或者配置其他代理工具
                         <br>127.0.0.1:8888 www.domain.com dev
                     </small>
                 </label>
@@ -89,20 +89,20 @@
                 <tbody id="tbody-hosts" class="needBulk"></tbody>
             </table>
             <div class="bulkActions">
-                <a href="#" id="but_del">删除</a>
+                <a href="#" id="but_del">Delete</a>
             </div>
         </div>
     </div>
     </div>
     <script id="host-item" type="text/template">
-        <tr id="host-{=id}" data-id="{=id}" data-domain="{=domain}" data-ip="{=ip}" title="更新时间:{=uptime}">
+        <tr id="host-{=id}" data-id="{=id}" data-domain="{=domain}" data-ip="{=ip}" title="Updated at: {=uptime}">
             <td><input name="id[]" value="{=id}" type="checkbox"></td>
             <td>{=ip}</td>
             <td>{=domain}</td>
             <td class="tags">{=tags}</td>
             <td class="note">{=note}</td>
             <td>
-                <span class="actions"><a href="#" data-id="{=id}" class="delete">删除</a> <i class="I">|</i> <a href="#" data-id="{=id}" class="edit">编辑</a></span>
+                <span class="actions"><a href="#" data-id="{=id}" class="delete">Delete</a> <i class="I">|</i> <a href="#" data-id="{=id}" class="edit">Edit</a></span>
             </td>
         </tr>
     </script>
