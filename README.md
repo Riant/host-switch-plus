@@ -51,6 +51,8 @@ IP:端口 域名 tag 备注
 
 大概看了下代理实现部分，尝试修改了一下，同时完善了原作者没有完成的编辑、批量添加等功能，同时新增了一个域名对应多个IP 时，只能有一个生效的检测，并清理了文件很大但用处不多的 Bootstrap 及其 Js 插件。
 
+截图预览：
+
 ![Popup Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-1.png)
 
 ![Add New Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-add.png)
