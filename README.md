@@ -1,7 +1,5 @@
 # Host Switch Plus - Chrome Extension
 
-Based on [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)
-
 Install from [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon)
 
 Change the hosts rules in Chrome. It's easy, and effect immediately.
@@ -20,43 +18,40 @@ Sorry for my Poor English, learn more from the screenshots please.
 
 Any questions/issues let me know: https://github.com/Riant/host-switch-plus/issues
 
-»ùÓÚ [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch) ĞŞ¸ÄÍêÉÆ¡¢·ÖÏí¡£¸ĞĞ»Ô­×÷Õß¿ªÔ´¹²Ïí¡£
+Based on [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)
 
-> ÓòÃûipÇĞ»»¹¤¾ß:
-> 
-> »ùÓÚ ´úÀíPAC ×Ô¶¯ÇĞ»»Ò»¸öÓòÃûµÄIP£¬¶ø²»ÓÃĞŞ¸Ä hosts, ·½±ãweb¿ª·¢ÈËÔ±ÔÚ ¸÷ÖÖ/²âÊÔ/¿ª·¢/ÏßÉÏ »·¾³¿ìËÙÇĞ»»
+é€šè¿‡è¯¥ Chrome æ‰©å±•ï¼Œå¿«æ·æ–¹ä¾¿çš„åˆ‡æ¢ã€è®¾ç½® host ä»£ç†è§„åˆ™ï¼Œè€Œä¸ç”¨ä¿®æ”¹ç³»ç»Ÿ hosts æ–‡ä»¶ï¼Œæ–¹ä¾¿webå¼€å‘äººå‘˜åœ¨ å„ç§/æµ‹è¯•/å¼€å‘/çº¿ä¸Š ç¯å¢ƒå¿«é€Ÿåˆ‡æ¢
 
-Í¨¹ı [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon) °²×°
+é€šè¿‡ [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon) å®‰è£…
 
-Í¨¹ı¸Ã Chrome À©Õ¹£¬¿ì½İ·½±ãµÄÇĞ»»¡¢ÉèÖÃ host ´úÀí¹æÔò¡£
-
+æ‰¹é‡æ·»åŠ è§„åˆ™ï¼ˆIP:ç«¯å£ã€åŸŸåã€tagã€å¤‡æ³¨åˆ†åˆ«ç”¨ç©ºæ ¼éš”å¼€ï¼›å¤šä¸ª tag ç”¨è‹±æ–‡é€—å·éš”å¼€ï¼‰ï¼š
 ```
-IP:¶Ë¿Ú ÓòÃû tag ±¸×¢
+#IP:ç«¯å£ åŸŸå tag å¤‡æ³¨
 127.0.0.1:8888 www.xyz.com prod Fiddler
 127.0.0.1 *.xyz.com
 192.168.1.2 www.xyz.com
 ```
 
-#ÆğÔµ
-ÔÚ³ÌĞò¿ª·¢¹ı³ÌÖĞ£¬ÄÑÃâ¿ª·¢¡¢²âÊÔ¡¢Éú²ú»·¾³¸÷ÖÖÇĞ»»£¬Ò»°ãÎÒÃÇÖ±½ÓĞŞ¸ÄÏµÍ³µÄ hosts ÎÄ¼ş¡£
+#èµ·ç¼˜
+åœ¨ç¨‹åºå¼€å‘è¿‡ç¨‹ä¸­ï¼Œéš¾å…å¼€å‘ã€æµ‹è¯•ã€ç”Ÿäº§ç¯å¢ƒå„ç§åˆ‡æ¢ï¼Œä¸€èˆ¬æˆ‘ä»¬ç›´æ¥ä¿®æ”¹ç³»ç»Ÿçš„ hosts æ–‡ä»¶ã€‚
 
-ÕâÃ´×öµÄ¼¸¸öÎÊÌâ£º
+è¿™ä¹ˆåšçš„å‡ ä¸ªé—®é¢˜ï¼š
 
-1. ±à¼­¡¢¹ÜÀíÂé·³£¬ÍÆ¼ö [SwitchHosts!](http://oldj.net/article/switchhosts/)£»
+1. ç¼–è¾‘ã€ç®¡ç†éº»çƒ¦ï¼Œæ¨è [SwitchHosts!](http://oldj.net/article/switchhosts/)ï¼›
 
-2. ÉúĞ§ÑÓ³Ù¡£ÓÃ Fiddler µÄÍ¬Ñ§¿ÉÒÔÊÔÊÔËü Tools ÏÂµÄ HOSTS ¹¤¾ß£»µ«ÊÇÕâ¸ö¹¤¾ßÓÖÈÃÎÒÃÇ»Øµ½ÁËµÚÒ»¸öÎÊÌâÉÏ¡£
+2. ç”Ÿæ•ˆå»¶è¿Ÿã€‚ç”¨ Fiddler çš„åŒå­¦å¯ä»¥è¯•è¯•å®ƒ Tools ä¸‹çš„ HOSTS å·¥å…·ï¼›ä½†æ˜¯è¿™ä¸ªå·¥å…·åˆè®©æˆ‘ä»¬å›åˆ°äº†ç¬¬ä¸€ä¸ªé—®é¢˜ä¸Šã€‚
 
-ºÃÁË£¬ÄÜ·ñÓĞÒ»¸ö¹¤¾ß¹ÜÀí·½±ã£¬ÓÖ¿ì½İ¼òµ¥ÄØ£¿ÎÒÕÒµ½Ò»¸ö Chrome À©Õ¹ [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)£»ÎÊÌâËÆºõ½â¾öÁË¡£
+å¥½äº†ï¼Œèƒ½å¦æœ‰ä¸€ä¸ªå·¥å…·ç®¡ç†æ–¹ä¾¿ï¼Œåˆå¿«æ·ç®€å•å‘¢ï¼Ÿæˆ‘æ‰¾åˆ°ä¸€ä¸ª Chrome æ‰©å±• [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)ï¼›é—®é¢˜ä¼¼ä¹è§£å†³äº†ã€‚
 
-¿ÉÊÇÎªÁËÓÃ Fiddler£¬ÎÒ»¹×°ÁË²å¼ş [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-ntp-icon)
+å¯æ˜¯ä¸ºäº†ç”¨ Fiddlerï¼Œæˆ‘è¿˜è£…äº†æ’ä»¶ [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-ntp-icon)
 
-¶ø Chrome µÄ´úÀí²å¼şÖ»ÄÜÍ¬Ê±ÓĞÒ»¸öÉúĞ§£¬ÄÇÃ´ÓĞÃ»ÓĞÊ²Ã´°ì·¨ÕûºÏÒ»ÏÂÄØ£¿
+è€Œ Chrome çš„ä»£ç†æ’ä»¶åªèƒ½åŒæ—¶æœ‰ä¸€ä¸ªç”Ÿæ•ˆï¼Œé‚£ä¹ˆæœ‰æ²¡æœ‰ä»€ä¹ˆåŠæ³•æ•´åˆä¸€ä¸‹å‘¢ï¼Ÿ
 
-¸ĞĞ» Chrome Host Switch ÊÇÔÚ Github ¿ªÔ´·ÖÏí£¬ÒÅº¶¸øËûµÄ Issues Ò»Ö±Ã»ÓĞ»ØÓ¦£¬¹À¼Æ×÷ÕßÒ²ÊÇºÜ¾ÃÃ»ÓĞ¸ú½øÁË£»ÓÚÊÇ×Ô¼º¶¯ÊÖ°É¡£
+æ„Ÿè°¢ Chrome Host Switch æ˜¯åœ¨ Github å¼€æºåˆ†äº«ï¼Œé—æ†¾ç»™ä»–çš„ Issues ä¸€ç›´æ²¡æœ‰å›åº”ï¼Œä¼°è®¡ä½œè€…ä¹Ÿæ˜¯å¾ˆä¹…æ²¡æœ‰è·Ÿè¿›äº†ï¼›äºæ˜¯è‡ªå·±åŠ¨æ‰‹å§ã€‚
 
-´ó¸Å¿´ÁËÏÂ´úÀíÊµÏÖ²¿·Ö£¬³¢ÊÔĞŞ¸ÄÁËÒ»ÏÂ£¬Í¬Ê±ÍêÉÆÁËÔ­×÷ÕßÃ»ÓĞÍê³ÉµÄ±à¼­¡¢ÅúÁ¿Ìí¼ÓµÈ¹¦ÄÜ£¬Í¬Ê±ĞÂÔöÁËÒ»¸öÓòÃû¶ÔÓ¦¶à¸öIP Ê±£¬Ö»ÄÜÓĞÒ»¸öÉúĞ§µÄ¼ì²â£¬²¢ÇåÀíÁËÎÄ¼şºÜ´óµ«ÓÃ´¦²»¶àµÄ Bootstrap ¼°Æä Js ²å¼ş¡£
+å¤§æ¦‚çœ‹äº†ä¸‹ä»£ç†å®ç°éƒ¨åˆ†ï¼Œå°è¯•ä¿®æ”¹äº†ä¸€ä¸‹ï¼ŒåŒæ—¶å®Œå–„äº†åŸä½œè€…æ²¡æœ‰å®Œæˆçš„ç¼–è¾‘ã€æ‰¹é‡æ·»åŠ ç­‰åŠŸèƒ½ï¼ŒåŒæ—¶æ–°å¢äº†ä¸€ä¸ªåŸŸåå¯¹åº”å¤šä¸ªIP æ—¶ï¼Œåªèƒ½æœ‰ä¸€ä¸ªç”Ÿæ•ˆçš„æ£€æµ‹ï¼Œå¹¶æ¸…ç†äº†æ–‡ä»¶å¾ˆå¤§ä½†ç”¨å¤„ä¸å¤šçš„ Bootstrap åŠå…¶ Js æ’ä»¶ã€‚
 
-½ØÍ¼Ô¤ÀÀ£º
+æˆªå›¾é¢„è§ˆï¼š
 
 ![Popup Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-1.png)
 
@@ -66,10 +61,12 @@ IP:¶Ë¿Ú ÓòÃû tag ±¸×¢
 
 ![Hosts Manage Screenshot](https://raw.githubusercontent.com/Riant/host-switch-plus/master/screenshots/screenshot-hosts.png)
 
-ÓÉÓÚ×î½üÃ¦£¬Ã»ÓĞÏêÏ¸²âÊÔÍêÉÆ£¬ÈÎºÎÒÉÎÊ£¬½¨Òé£¬»¶Ó­[Ìá½» Issues](https://github.com/Riant/host-switch-plus/issues).
+ç”±äºæœ€è¿‘å¿™ï¼Œæ²¡æœ‰è¯¦ç»†æµ‹è¯•å®Œå–„ï¼Œä»»ä½•ç–‘é—®ï¼Œå»ºè®®ï¼Œæ¬¢è¿[æäº¤ Issues](https://github.com/Riant/host-switch-plus/issues).
 
-##×¢£º
-1. ¸Ã°æ±¾ÔİÊ±Ã»ÓĞÖ§³ÖÔ­°æ Host Switch µÄ±ğÃû¹¦ÄÜ
+åŸºäº [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch) ä¿®æ”¹å®Œå–„ã€åˆ†äº«ã€‚æ„Ÿè°¢åŸä½œè€…å¼€æºå…±äº«ã€‚
+
+##æ³¨ï¼š
+1. è¯¥ç‰ˆæœ¬æš‚æ—¶æ²¡æœ‰æ”¯æŒåŸç‰ˆ Host Switch çš„åˆ«ååŠŸèƒ½
     192.168.1.110 web1
     #web1  www.wwbaidu.com
 
