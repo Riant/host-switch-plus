@@ -1,5 +1,20 @@
 # Host Switch Plus - Chrome Extension
 
+通过该 Chrome 扩展，快捷方便的切换、设置 host 代理规则，而不用修改系统 hosts 文件，方便web开发人员在 各种/测试/开发/线上 环境快速切换
+
+通过 [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon) 安装
+
+无法通过 Chrome Store 安装或者更新的朋友，可以尝试使用 百度浏览器或者360之类的支持 Chrome 扩展的浏览器：
+360 浏览器/百度浏览器等其他支持 Chrome 扩展的浏览器，[下载 crx 文件](https://github.com/Riant/host-switch-plus/raw/master/host-switch-plus.crx)，转至浏览器扩展程序管理界面，将下载的 crx 文件拖拽至该页面中释放，即可根据提示安装使用。
+
+批量添加规则（IP:端口、域名、tag、备注分别用空格隔开；多个 tag 用英文逗号隔开）：
+```
+#IP:端口 域名 tag 备注
+127.0.0.1:8888 www.xyz.com prod Fiddler
+127.0.0.1 *.xyz.com
+192.168.1.2 www.xyz.com
+```
+
 Install from [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon)
 
 Change the hosts rules in Chrome. It's easy, and effect immediately.
@@ -20,17 +35,6 @@ Any questions/issues let me know: https://github.com/Riant/host-switch-plus/issu
 
 Based on [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch)
 
-通过该 Chrome 扩展，快捷方便的切换、设置 host 代理规则，而不用修改系统 hosts 文件，方便web开发人员在 各种/测试/开发/线上 环境快速切换
-
-通过 [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon) 安装
-
-批量添加规则（IP:端口、域名、tag、备注分别用空格隔开；多个 tag 用英文逗号隔开）：
-```
-#IP:端口 域名 tag 备注
-127.0.0.1:8888 www.xyz.com prod Fiddler
-127.0.0.1 *.xyz.com
-192.168.1.2 www.xyz.com
-```
 
 #起缘
 在程序开发过程中，难免开发、测试、生产环境各种切换，一般我们直接修改系统的 hosts 文件。
@@ -69,7 +73,5 @@ Based on [Chrome Host Switch](https://github.com/shendongming/chrome-host-switch
 1. 该版本暂时没有支持原版 Host Switch 的别名功能
     192.168.1.110 web1
     #web1  www.wwbaidu.com
-
-
 
 
