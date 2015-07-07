@@ -253,6 +253,10 @@
         return loadData('status') ? loadData('status') : 0;
     }
 
+    model.getDefaultMode = function(){
+        return loadData('default_mode') ? loadData('default_mode') : 'DIRECT';
+    }
+
     model.getEnabledHosts=function(){
         var results=[];
         var hosts=model.getHosts();
@@ -303,8 +307,10 @@
     }
 
     //开关,启用暂停
-    model.setStatus = function (checked) {
+    model.setStatus = function (checked, default_mode) {
         saveData('status',checked);
+        default_mode = default_mode || this.getDefaultMode();
+        saveData('default_mode', default_mode);
         this.checked = checked;
 
         var script = '';
@@ -327,18 +333,18 @@
                     script += '}else if(host == "' + info.domain + '"){';
                 }
 
-                if( info.ip.indexOf(':') !== -1 ){
+                if( info.ip.indexOf(':') > -1 ){
                     var ip_port = info.ip.split(':');
-                    ip = ip_port[0];
-                    port = ip_port[1];
+                    ip = ip_port[ip_port.length - 2];
+                    port = ip_port[ip_port.length - 1];
                 }
                 script += 'return "PROXY ' + ip + ':'+ port +'; DIRECT";';
 
                 script+="\n";
 
             }
-            var data='function FindProxyForURL(url,host){ \n if(shExpMatch(url,"http:*")){if(isPlainHostName(host)){return "DIRECT";' +
-                script + '}else{return "DIRECT";}}else{return "DIRECT";}}';
+            var data='function FindProxyForURL(url,host){ \n if(shExpMatch(url,"http:*") || shExpMatch(url,"https:*")){if(isPlainHostName(host)){return "DIRECT";' +
+                script + '}else{return "'+ default_mode +'";}}else{return "SYSTEM";}}';
 
 
             chrome.proxy.settings.set({
@@ -352,12 +358,13 @@
             }, function(){
                 //console.log('set pac scripts result:',arguments);
             });
-            $('#msg').html('set :' + script);
+            // $('#msg').html('set :' + script);
         } else {
             chrome.proxy.settings.set({
                 value: {
                     //mode: 'system'
-                    mode: 'direct'
+                    // mode: 'direct'
+                    mode: default_mode.toLowerCase()
                 },
                 scope: 'regular'
             }, $.noop);
@@ -431,6 +438,6 @@
 
     // init status as true
     if( localStorage['status'] === undefined ){
-        model.setStatus(true);
+        model.setStatus(true, 'DIRECT');
     }
 })(window);

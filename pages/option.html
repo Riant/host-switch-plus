@@ -13,13 +13,15 @@
   <body>
   <div class="inner">
     <h1>Host Switch Plus
-        <small><label class="checkbox"><input id="status" type="checkbox" value="1" checked><span>Enable</span></label></small>
+        <small>Default: <select id="default"><option value="DIRECT">Direct</option><option value="SYSTEM">System</option></select>
+        &nbsp;&nbsp;
+        <label class="checkbox"><input id="status" type="checkbox" value="1" checked><span>Enable</span></label></small>
     </h1>
 
     <nav id="add_tab" class="tabNavs">
-        <a href="#" data-target="#addForm" class="current">Add New</a>
-        <a href="#" data-target="#bulkForm">Bulk Add</a>
-        <a href="#" data-target="#list" id="listBtn">Hosts</a>
+        <a href="#" data-target="#addForm" class="current" title="新增 Hosts 配置">Add</a>
+        <a href="#" data-target="#bulkForm" title="批量添加">Bulk Add</a>
+        <a href="#" data-target="#list" title="管理" id="listBtn">Hosts</a>
     </nav>
     <div class="tabConts">
         <form role="form" id="addForm" class="tabCont current">

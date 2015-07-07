@@ -208,7 +208,10 @@ $(function () {
     });
 
     $("#status").prop('checked', model.getStatus()).change(function () {
-        model.setStatus(this.checked);
+        model.setStatus(this.checked, $('#default').val());
+    });
+    $('#default').val(model.getDefaultMode()).change(function(){
+        model.setStatus($("#status")[0].checked, $(this).val());
     });
 
     function set_status(id,status){
