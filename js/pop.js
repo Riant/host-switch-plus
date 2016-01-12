@@ -45,6 +45,26 @@ $(function () {
         div_labels.html(label_checks);
     }
 
+    // 导出为文件功能
+    $('#export').on('click', function() {
+        var hosts = model.getHosts();
+        var str = ''
+        for (var i in hosts) {
+            var h = hosts[i]
+            str += h.ip + " " + h.domain + " " + h.tags.toString() + " " + h.note + "\n";
+        }
+        downloadFile('host-switch-plus.json', str);
+    });
+    function downloadFile(fileName, content){
+        var aLink = document.createElement('a');
+        var blob = new Blob([content]);
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent("click", false, false);
+        aLink.download = fileName;
+        aLink.href = URL.createObjectURL(blob);
+        aLink.dispatchEvent(evt);
+    }
+
     var labels = $('#label-filter');
 
     labels.on('click', 'a', function () {
