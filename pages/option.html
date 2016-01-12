@@ -13,7 +13,7 @@
   <body>
   <div class="inner">
     <h1>Host Switch Plus
-        <small>Default: <select id="default"><option value="DIRECT">Direct</option><option value="SYSTEM">System</option></select>
+        <small>Default: <select id="default"><option value="DIRECT">Direct</option><option value="SYSTEM">System</option><option value="PROXY 127.0.0.1:8787; DIRECT">Lantern</option><option value="DIRECT">UserDefined</option></select>
         &nbsp;&nbsp;
         <label class="checkbox"><input id="status" type="checkbox" value="1" checked><span>Enable</span></label></small>
     </h1>
@@ -22,6 +22,7 @@
         <a href="#" data-target="#addForm" class="current" title="新增 Hosts 配置">Add</a>
         <a href="#" data-target="#bulkForm" title="批量添加">Bulk Add</a>
         <a href="#" data-target="#list" title="管理" id="listBtn">Hosts</a>
+        <a href="#" data-target="#defaultMode" title="默认代理" id="defaultBtn">Default Mode</a>
     </nav>
     <div class="tabConts">
         <form role="form" id="addForm" class="tabCont current">
@@ -97,6 +98,22 @@
                 <a href="#" id="but_del">Delete</a>
             </div>
         </div>
+        <form action="#" id="defaultMode" class="tabCont bulkForm">
+            <div class="field textareaField">
+                <label for="defaultMode"><strong>Proxy Model</strong>
+                    <small>当你使用代理时请添加此模式。
+                        <br>现有模式Default选项:
+                        <br>Direct: DIRECT
+                        <br>System: SYSTEM
+                        <br>Lantern: PROXY 127.0.0.1:8787; DIRECT
+                    </small>
+                </label>
+                <input type="text" id="input_mode" class="form-control input-sm" placeholder="proxy model" value="">
+            </div>
+            <div class="btnLine">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
     </div>
     <script id="host-item" type="text/template">

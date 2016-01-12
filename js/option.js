@@ -105,6 +105,22 @@ $(function () {
         return false;
     });
 
+    $('#defaultMode').on('submit', function(){
+        var mode = $('#input_mode').val();
+        console.log(mode)
+        var res = $('#default option').each(function() {
+            console.log($(this).val())
+            if ($(this).val() == mode) {
+                return false;
+            }
+        });
+        if (res != false) {
+            console.log(222)
+            model.setStatus($("#status")[0].checked, mode);
+        }
+        return false;
+    });
+
 
     //  批量操作
     //

@@ -230,7 +230,10 @@ $(function () {
     $("#status").prop('checked', model.getStatus()).change(function () {
         model.setStatus(this.checked, $('#default').val());
     });
+    $('#default option').eq(3).val(model.getDefaultMode());
+    $('#input_mode').val(model.getDefaultMode());
     $('#default').val(model.getDefaultMode()).change(function(){
+        $('#input_mode').val(model.getDefaultMode());
         model.setStatus($("#status")[0].checked, $(this).val());
     });
 
