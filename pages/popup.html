@@ -16,11 +16,20 @@
             <i class="I">|</i>
             <a href="/pages/option.html#hosts" target="_blank" title="管理">Manage</a>
         </small>
-        <small>Default: <select id="default"><option value="DIRECT">Direct</option><option value="SYSTEM">System</option></select></small>
+        <small>Default: <select id="default">
+        <option value="DIRECT">Direct</option>
+        <option value="SYSTEM">System</option>
+        <option value="PROXY 127.0.0.1:8787; DIRECT">Lantern</option>
+        <option value="DIRECT">UserDefined</option>
+        </select>
+        </small>
         <label class="checkbox"><input id="status" type="checkbox" value="1" checked><span>Enable</span></label>
     </h1>
     <form action="#" id="searchForm" class="search">
         <input type="text" id="input_search" class="form-control input-sm" placeholder="Search Domain,IP,Tag.(ip:192. or tags:dev)" value="">
+        <small>
+            <a href="#" id="export" title="导出 Hosts 配置">Export</a>
+        </small>
     </form>
 
     <div class="filter">Tags: <span id="label-filter"></span>(Double click to enable all)</div>

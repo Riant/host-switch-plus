@@ -346,7 +346,6 @@
             var data='function FindProxyForURL(url,host){ \n if(shExpMatch(url,"http:*") || shExpMatch(url,"https:*")){if(isPlainHostName(host)){return "DIRECT";' +
                 script + '}else{return "'+ default_mode +'";}}else{return "SYSTEM";}}';
 
-
             chrome.proxy.settings.set({
                 value: {
                     mode: 'pac_script',
