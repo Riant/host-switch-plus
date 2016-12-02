@@ -1,4 +1,5 @@
 # Host Switch Plus - Chrome Extension
+最新版：1.3.10
 
 通过该 Chrome 扩展，快捷方便的切换、设置 host 代理规则，而不用修改系统 hosts 文件，方便web开发人员在 各种/测试/开发/线上 环境快速切换
 
@@ -14,6 +15,9 @@
 127.0.0.1 *.xyz.com
 192.168.1.2 www.xyz.com
 ```
+
+注：
+1. https: 由于没有 https 目标服务器，https 的支持测试不完整（通过 Fiddler 和 Shadowsocks 2.5.2 测试），如果有需要，请确保您的目标服务器有相应的 https 请求支持。
 
 Install from [Chrome Store](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?utm_source=chrome-ntp-icon)
 

@@ -1,12 +1,12 @@
+var enableHosts = [];
+
 chrome.webRequest.onCompleted.addListener(function (details) {
     //data[details.tabId] = details.ip;
-    console.log(details);
     setTimeout(function(){
-
         details.req = 'showip';
-
+        details.hosts = enableHosts;
         chrome.tabs.sendRequest(details.tabId, details, function (response) {
-            console.log('res:', response)
+            // console.log('res:', response);
         });
     },1000);
 }, {
@@ -14,3 +14,6 @@ chrome.webRequest.onCompleted.addListener(function (details) {
     types: [ 'main_frame' ]
 });
 
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+    enableHosts = request;
+});

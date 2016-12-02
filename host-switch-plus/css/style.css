@@ -1,0 +1,67 @@
+body { font-size: 14px; line-height: 1.5; color: #333; font-family: Arial, 'Microsoft Yahei'; background: #FFF;}
+.inner { min-width: 500px; max-width: 960px;}
+
+.popup .inner { padding: 5px 10px 10px;}
+h1, h2 { margin: 0 0 0.4em;}
+h1 small { font-size: 14px; margin-left: 10px;}
+
+.popup h1 { font-size: 18px; position: relative;}
+.popup h1 .checkbox { position: absolute; bottom: 0; right: 0; font-size: 14px;}
+.popup h1 small { font-weight: normal; font-size: 12px;}
+
+a { text-decoration: none; color: #FFA200;}
+i.I { padding: 0 5px; color: #999;}
+
+.inner { padding: 20px;}
+
+.status-enabled { color: green;}
+.status-disabled { color: #cccccc;}
+
+label { cursor: pointer;}
+.field { margin-bottom: 10px;}
+.field label { display: inline-block; width: 80px; vertical-align: top; padding-top: 6px;}
+.bulkForm .field label { display: block; width: auto;}
+label.checkbox { width: auto; margin-right: 20px;}
+label small { font-size: 12px; font-weight: normal; color: #999; display: block; line-height: 1.8;}
+
+input, textarea, select { border: 1px solid #DDD; font-size: 12px; font-family: Arial, 'Microsoft Yahei';}
+input[type="text"] { font-size: 12px; height: 27px; line-height: 27px; padding: 1px 8px 0; width: 280px;}
+input:focus { outline: none; border-color: #999;}
+input[type="radio"], input[type="checkbox"] { position: relative; top: 1px;}
+input[type="submit"] { cursor: pointer; background: #3B8DBD; border-color: #3B8DBD; padding: 6px 10px; color: #FFF;}
+input[type="submit"]:hover { background: #FFA24F; border-color: #FFA24F;}
+textarea { width: 450px; height: 180px; padding: 5px 8px; line-height: 1.8;}
+
+.tabNavs { margin-bottom: 15px; border-bottom: 1px solid #DDD;}
+.tabNavs a { display: inline-block; margin-left: 15px; padding: 4px 15px; border: 1px solid #DDD; position: relative; bottom: -1px;}
+.tabNavs a.current { background: #FFF; border-bottom-color: #FFF;}
+
+.tabCont { display: none;}
+.tabConts .current { display: block;}
+
+.filter { padding: 10px 0; font-size: 12px;}
+
+table { width: 100%; border-top: 1px solid #DDD; border-collapse: collapse; border-bottom: 1px solid #DDD; margin-bottom: 10px; font-size: 12px;}
+td, th { padding: 8px 5px 6px;}
+th { text-align: left;}
+td { border-top: 1px solid #DDD; cursor: pointer;}
+tr:hover td { background: #E8F7ED;}
+
+tr .actions { display: none;}
+tr:hover .actions { display: block;}
+
+.needBulk td { cursor: default;}
+
+.host-status { display: inline-block; position: relative; top: 1px; width: 12px; height: 12px; border-radius: 100%; background: #CCC;}
+.status-enabled { background: #00BC39;}
+
+.search { margin-bottom: 10px;}
+.search input { height: 23px; line-height: 23px; vertical-align: middle; border-color: #CCC;}
+.search input:focus { border-color: #333;}
+
+.bulkActions { font-size: 12px;}
+.bulkActions a { display: inline-block; margin-right: 5px; padding: 3px 10px; background: #3B8DBD; color: #FFF; border-radius: 3px;}
+.bulkActions a:hover { background: #FFA200;}
+#label-filter a { display: inline-block; margin-right: 8px;}
+#label-filter a.action { color: #000;}
+#btn_search { border-radius: 0 3px 3px 0;}

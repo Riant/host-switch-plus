@@ -219,11 +219,7 @@
      * @returns {Array}
      */
     model.countTags = function () {
-        var tags = {
-            'prod': 0,
-            'dev': 0,
-            'test': 0
-        }
+        var tags = {};
         var hosts = loadData('hosts');
         for (var i in hosts) {
             if (hosts.hasOwnProperty(i)) {
@@ -316,7 +312,6 @@
         var script = '';
 
         if (this.checked) {
-
             var results=model.getEnabledHosts();
             for(var i =0;i<results.length;i++){
                 var info=results[i];
@@ -328,7 +323,7 @@
                 }else if(info.domain.indexOf(':')!=-1){
                     var t=info.domain.split(':');
                     port = t[1];
-                    script += '}else if(shExpMatch(url,"http://' + info.domain + '/*")){';
+                    script += '}else if(shExpMatch(url,"http://' + info.domain + '/*") || shExpMatch(url,"https://' + info.domain + '/*")){';
                 }else{
                     script += '}else if(host == "' + info.domain + '"){';
                 }
@@ -341,11 +336,10 @@
                 script += 'return "PROXY ' + ip + ':'+ port +'; DIRECT";';
 
                 script+="\n";
-
             }
+
             var data='function FindProxyForURL(url,host){ \n if(shExpMatch(url,"http:*") || shExpMatch(url,"https:*")){if(isPlainHostName(host)){return "DIRECT";' +
                 script + '}else{return "'+ default_mode +'";}}else{return "SYSTEM";}}';
-
 
             chrome.proxy.settings.set({
                 value: {
@@ -356,9 +350,10 @@
                 },
                 scope: 'regular'
             }, function(){
-                //console.log('set pac scripts result:',arguments);
+                // console.log('set pac scripts result:',arguments);
             });
             // $('#msg').html('set :' + script);
+            refreshDataForBk();
         } else {
             chrome.proxy.settings.set({
                 value: {
@@ -368,6 +363,7 @@
                 },
                 scope: 'regular'
             }, $.noop);
+            refreshDataForBk(true);
         }
     }
     //移除主机
@@ -380,7 +376,6 @@
     }
 
     model.enableHosts = function (ids) {
-
         var hosts = loadData('hosts');
         for (var i = 0; i < ids.length; i++) {
             if (hosts[ids[i]]) {
@@ -391,6 +386,7 @@
         saveData('hosts', hosts);
         model.reload();
     }
+
     model.disableHosts = function (ids) {
         var hosts = loadData('hosts');
         for (var i = 0; i < ids.length; i++) {
@@ -417,9 +413,15 @@
         model.reload();
     }
 
+    function refreshDataForBk(do_off){
+        chrome.extension.sendRequest(do_off ? [] : model.getEnabledHosts(), function(data){
+            // do Something;
+        });
+    }
 
     function saveData(name, value) {
         localStorage[name] = JSON.stringify(value);
+        refreshDataForBk();
     }
 
     function loadData(name) {

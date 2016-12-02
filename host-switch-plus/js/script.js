@@ -26,9 +26,18 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
     }
     switch(request.req){
         case "showip":{
-            //func();
-            console.log("Host switch: "+(new Date().Format("hh:mm:ss"))+" - "+getDomain(request.url)+'=>'+request.ip);
-            break;
+            var hosts = request.hosts,
+                _url = getDomain(request.url);
+            var style = 'position:fixed;bottom:0;left:0;z-index:99999;background:rgba(0,0,0,.3);color:#FFF;padding:3px 5px; border-radius:0 3px 0 0;';
+            console.log('sd');
+            for( var i = 0, len = hosts.length; i < len; i++ ){
+                var host = hosts[i];
+                if( host.domain === '*' || (host.domain.indexOf('*') > -1 ? (new RegExp('^'+ host.domain.split('.').join('\\.').split('*').join('.*') +'$')).test(_url) : host.domain === _url) ){
+                    jQuery('body').append('<div class="hsp-ipview" title="Added By Host Switch Plus ( '+ host.ip +' '+ host.domain +' )" style="'+ style +'">'+ host.ip +'</div>');
+                    console.info("Host Switch Plus: " + new Date().Format("hh:mm:ss") + " - " + getDomain(request.url) + '=>' + request.ip + ' ||| ( '+ host.ip +' '+ host.domain +' )');
+                    break;
+                }
+            }
         }
 
         default:{

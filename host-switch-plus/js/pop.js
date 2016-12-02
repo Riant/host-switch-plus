@@ -37,6 +37,7 @@ $(function () {
 
         for (var i = 0; i < tags.length; i++) {
             var tag = tags[i];
+            if( ! tag.count ) continue;
             total += tag.count;
             labels_html += '<a href="#" data-tag="' + tag.name + '">' + tag.name + '(' + tag.count + ')</a>';
             label_checks += '<label class="checkbox"><input type="checkbox" name="labels[]" value="' + tag.name + '">' + tag.name + '</label>';
