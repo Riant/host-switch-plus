@@ -1,5 +1,5 @@
 # Host Switch Plus - Chrome Extension
-最新版：1.3.10
+最新版：1.3.11
 
 通过该 Chrome 扩展，快捷方便的切换、设置 host 代理规则，而不用修改系统 hosts 文件，方便web开发人员在 各种/测试/开发/线上 环境快速切换
 

@@ -48,6 +48,11 @@
                 <label for="note">Note：</label>
                 <input type="text" placeholder="Note" id="note">
             </div>
+            <div class="field">
+                <label for="note">Order：</label>
+                <input type="number" placeholder="Order" id="order" value="1"> <span>The greater is preferred. 排序：数值越大越靠前，代理匹配时优先级越高</span>
+            </div>
+
 
             <div class="field">
                 <label></label>
@@ -84,6 +89,7 @@
                         <th>Domain</th>
                         <th>Tag</th>
                         <th>Note</th>
+                        <th>Order</th>
                         <th width="100"></th>
                     </tr>
                 </thead>
@@ -96,12 +102,13 @@
     </div>
     </div>
     <script id="host-item" type="text/template">
-        <tr id="host-{=id}" data-id="{=id}" data-domain="{=domain}" data-ip="{=ip}" title="Updated at: {=uptime}">
+        <tr id="host-{=id}" data-id="{=id}" title="Updated at: {=uptime}">
             <td><input name="id[]" value="{=id}" type="checkbox"></td>
             <td>{=ip}</td>
             <td>{=domain}</td>
             <td class="tags">{=tags}</td>
             <td class="note">{=note}</td>
+            <td>{=order}</td>
             <td>
                 <span class="actions"><a href="#" data-id="{=id}" class="delete">Delete</a> <i class="I">|</i> <a href="#" data-id="{=id}" class="edit">Edit</a></span>
             </td>

@@ -100,7 +100,21 @@
                 result.push(hosts[id]);
             }
         }
-        return result;
+        return model.sortHostsResult(result);
+    }
+
+    model.getHostById = function (id) {
+        var result = []
+        var hosts = loadData('hosts');
+        return hosts[id];
+    }
+
+    model.sortHostsResult = function(result){
+        return result.sort(function(x, y){
+                var a = Number(x.order),
+                    b = Number(y.order);
+                return (isNaN(a) ? 1 : a) < (isNaN(b) ? 1 : b);
+            });
     }
 
     //添加主机
@@ -221,10 +235,11 @@
     model.countTags = function () {
         var tags = {};
         var hosts = loadData('hosts');
+        var untag = 0;
         for (var i in hosts) {
             if (hosts.hasOwnProperty(i)) {
                 var host = hosts[i];
-                if (host.tags && host.tags.push) {
+                if (host.tags && host.tags.length) {
                     for (var x = 0; x < host.tags.length; x++) {
                         var tag = host.tags[x];
                         if (!tags[tag]) {
@@ -232,8 +247,9 @@
                         }
                         tags[tag]++;
                     }
+                } else {
+                    untag++;
                 }
-
             }
         }
         var result = []
@@ -242,6 +258,7 @@
                 result.push({'name': i, 'count': tags[i]});
             }
         }
+        if( untag ) result.push({name: '', count: untag});
         return result;
     }
 
@@ -294,7 +311,7 @@
             }
         }
 
-        return results;
+        return model.sortHostsResult(results);
     }
 
     //重新加载

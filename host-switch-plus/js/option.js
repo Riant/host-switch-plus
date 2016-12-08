@@ -50,6 +50,7 @@ $(function () {
             'note': $('#note').val(),
             'tags': [],
             'status':1,
+            'order': $('#order').val() === '' ? 1 : $('#order').val(),
             'uptime': new Date().Format("yyyy-MM-dd hh:mm:ss")
         };
         var add_tags = $('#add_labels').val().split(',');
@@ -86,6 +87,7 @@ $(function () {
                     'tags': '',
                     'note': $.trim(info[4]) ? $.trim(info[4]) : '',
                     'status': 0,
+                    'order': 1,
                     'uptime': new Date().Format("yyyy-MM-dd hh:mm:ss")
                 };
 

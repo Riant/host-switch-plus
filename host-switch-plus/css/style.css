@@ -25,7 +25,8 @@ label.checkbox { width: auto; margin-right: 20px;}
 label small { font-size: 12px; font-weight: normal; color: #999; display: block; line-height: 1.8;}
 
 input, textarea, select { border: 1px solid #DDD; font-size: 12px; font-family: Arial, 'Microsoft Yahei';}
-input[type="text"] { font-size: 12px; height: 27px; line-height: 27px; padding: 1px 8px 0; width: 280px;}
+input[type="text"], input[type="number"] { font-size: 12px; height: 27px; line-height: 27px; padding: 1px 8px 0; width: 280px;}
+input[type="number"] { width: 80px; padding-right: 0;}
 input:focus { outline: none; border-color: #999;}
 input[type="radio"], input[type="checkbox"] { position: relative; top: 1px;}
 input[type="submit"] { cursor: pointer; background: #3B8DBD; border-color: #3B8DBD; padding: 6px 10px; color: #FFF;}
