@@ -28,8 +28,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
         case "showip":{
             var hosts = request.hosts,
                 _url = getDomain(request.url);
-            var style = 'position:fixed;bottom:0;left:0;z-index:99999;background:rgba(0,0,0,.3);color:#FFF;padding:3px 5px; border-radius:0 3px 0 0;';
-            console.log('sd');
+            var style = 'position:fixed;bottom:0;left:0;z-index:99999;padding:3px 5px;background:rgba(0,0,0,.3);color:#FFF;font-size:12px;border-radius:0 3px 0 0;';
             for( var i = 0, len = hosts.length; i < len; i++ ){
                 var host = hosts[i];
                 if( host.domain === '*' || (host.domain.indexOf('*') > -1 ? (new RegExp('^'+ host.domain.split('.').join('\\.').split('*').join('.*') +'$')).test(_url) : host.domain === _url) ){
