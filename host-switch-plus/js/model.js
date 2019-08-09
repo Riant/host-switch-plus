@@ -341,6 +341,8 @@
                     var t=info.domain.split(':');
                     port = t[1];
                     script += '}else if(shExpMatch(url,"http://' + info.domain + '/*") || shExpMatch(url,"https://' + info.domain + '/*")){';
+                }else if(info.domain.indexOf('/')!=-1){
+                    script += '}else if(shExpMatch(url,"http://' + info.domain + '/*") || shExpMatch(url,"https://' + info.domain + '/*")){';
                 }else{
                     script += '}else if(host == "' + info.domain + '"){';
                 }
