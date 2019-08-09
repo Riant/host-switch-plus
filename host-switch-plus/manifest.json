@@ -3,7 +3,7 @@
   "name": "Host Switch Plus",
   "description": "快速切换 Domain-IP 配置而不需要编辑 Hosts 文件，并方便的添加、修改、分组（批量开关）。Switch domain-ip mapping (Hosts file) between different environment",
   "minimum_chrome_version": "22",
-  "version": "1.3.11",
+  "version": "2.0",
   "icons": {
     "16"  : "icons/icon_16.png",
     "128" : "icons/icon_128.png"
