@@ -131,7 +131,7 @@
                 hosts = {};
             }
             var id = 1 + c;
-            info.status = 0;
+            // info.status = 0;
             info.id = id;
 
             saveData('hosts-count', id);
