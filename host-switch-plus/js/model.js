@@ -113,7 +113,7 @@
         return result.sort(function(x, y){
                 var a = Number(x.order),
                     b = Number(y.order);
-                return (isNaN(a) ? 1 : a) < (isNaN(b) ? 1 : b);
+                return (isNaN(b) ? 1 : b)-(isNaN(a) ? 1 : a);
             });
     }
 
