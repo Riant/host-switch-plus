@@ -1,3 +1,5 @@
+# 由于一些特殊原因，该项目已经不再维护，请转往 [Riant/chrome-simply-proxy](https://github.com/Riant/chrome-simply-proxy), [Chrome 插件安装](https://chrome.google.com/webstore/detail/cpaaikjcnbooihdmpgcdhniadbhoailk)
+
 # Host Switch Plus - Chrome Extension
 最新版：1.3.11
 
